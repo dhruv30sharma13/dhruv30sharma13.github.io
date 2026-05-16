@@ -1,0 +1,158 @@
+:root {
+  --bg: #e6e6e6;
+  --paper: #f2f2f2;
+  --top: #20262e;
+  --header: #b31b1b;
+  --text: #111111;
+  --link: #002bc7;
+  --border: #c8c8c8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Courier New", Courier, "Lucida Console", monospace;
+  line-height: 1.45;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.top-strip {
+  background: var(--top);
+  color: #ffffff;
+  border-bottom: 1px solid #444;
+  font-size: 0.95rem;
+}
+
+.strip-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.strip-content p {
+  margin: 0;
+}
+
+.masthead {
+  background: var(--header);
+  color: #ffffff;
+  border-bottom: 2px solid #8e1313;
+}
+
+.masthead h1 {
+  margin: 0;
+  padding-top: 20px;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  letter-spacing: 1px;
+}
+
+.masthead .tagline {
+  margin: 6px 0 0;
+  padding-bottom: 20px;
+  font-size: 1rem;
+}
+
+.page-content {
+  padding: 20px 0 28px;
+}
+
+.resume-intro,
+.resume-section {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 14px;
+}
+
+.resume-section {
+  margin-top: 14px;
+}
+
+.resume-intro p {
+  margin: 4px 0;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 12px 0 4px;
+  font-size: 1.07rem;
+}
+
+p,
+li {
+  font-size: 0.98rem;
+}
+
+ul,
+ol {
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.meta {
+  display: block;
+  color: #303030;
+  font-size: 0.92rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+.footer-links {
+  margin-top: 16px;
+  background: #d8d8d8;
+  border-top: 1px solid var(--border);
+}
+
+.footer-links .container {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  min-height: 68px;
+}
+
+.footer-links a {
+  color: #000000;
+}
+
+@media (max-width: 720px) {
+  .strip-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links .container {
+    min-height: 56px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 12px 18px;
+  }
+}
