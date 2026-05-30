@@ -34,6 +34,9 @@ jobs:
       - name: Update MkDocs navigation
         run: python scripts/update_nav.py
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Build MkDocs site
         run: mkdocs build --strict
 
