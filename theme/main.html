@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+{% macro render_page_tree(children, class_name='') -%}
+<ul{% if class_name %} class="{{ class_name }}"{% endif %}>
+  {% for child in children recursive -%}
+  <li>
+    <a href="{{ child.url|url }}"{% if child.src and page_src == child.src %} aria-current="page"{% endif %}>{{ child.title }}</a>
+    {% if child.children -%}
+    <ul>{{ loop(child.children) }}</ul>
+    {% endif -%}
+  </li>
+  {% endfor -%}
+</ul>
+{%- endmacro %}
+{% set page_src = page.file.src_uri if page and page.file else '' -%}
+{% set is_blog_page = page and page.url.startswith('technical-blogs/') -%}
+{% set is_blog_index_page = is_blog_page and page_src.endswith('/index.md') -%}
+{% set generated_titles = config.extra.generated_titles|default({}) -%}
+{% set generated_strip_labels = config.extra.generated_strip_labels|default({}) -%}
+{% set generated_title = generated_titles.get(page_src) if page_src else none -%}
+{% set generated_strip_label = generated_strip_labels.get(page_src) if page_src else none -%}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="{{ config.site_author }}">
+  <meta name="description" content="{{ config.site_description }}">
+  {% if page and page.canonical_url -%}
+  <link rel="canonical" href="{{ page.canonical_url }}">
+  {% endif -%}
+  <title>{% if is_blog_page and generated_title %}{{ generated_title }} | {{ config.site_name }}{% elif page and page.meta.html_title %}{{ page.meta.html_title }}{% elif page and page.title %}{{ page.title }} | {{ config.site_name }}{% else %}{{ config.site_name }}{% endif %}</title>
+  <link rel="stylesheet" href="{{ 'css/styles.css'|url }}">
+</head>
+<body>
+  <header class="top-strip">
+    <div class="container strip-content">
+      <p><a class="brand-link" href="{{ 'index.html'|url }}">{{ config.extra.owner_name|default(config.site_name) }}</a></p>
+      <p>{% if is_blog_page and generated_strip_label %}{{ generated_strip_label }}{% else %}{{ page.meta.strip_label|default(page.title)|default(config.site_name) }}{% endif %}</p>
+    </div>
+  </header>
+
+  <section class="masthead">
+    <div class="container">
+      <h1>{% if is_blog_page and generated_title %}{{ generated_title }}{% else %}{{ page.meta.hero_title|default(page.title)|default(config.site_name) }}{% endif %}</h1>
+      {% if page.meta.tagline -%}
+      <p class="tagline">{{ page.meta.tagline }}</p>
+      {% endif -%}
+    </div>
+  </section>
+
+  {% set page_links = config.extra.page_links.get(page_src, {}) if page_src else {} -%}
+  {% set blog_root = config.extra.page_links.get('technical-blogs/index.md', {}) -%}
+  <main class="page-content">
+    <div class="container{% if is_blog_page and not is_blog_index_page %} blog-layout{% endif %}">
+      {% if is_blog_page and not is_blog_index_page -%}
+      <aside class="side-navigation" aria-label="Technical blog navigation">
+        {% if blog_root.children -%}
+        <div class="side-navigation-tree">
+          <h2>Technical Blogs</h2>
+          {{ render_page_tree(blog_root.children) }}
+        </div>
+        {% endif -%}
+      </aside>
+      <div class="content-column">
+      {% endif -%}
+
+      {{ page.content }}
+
+      {% if is_blog_index_page and page_links.children -%}
+      <section class="resume-section">
+        <h2>Contents</h2>
+        {{ render_page_tree(page_links.children, 'content-tree') }}
+      </section>
+      {% endif -%}
+
+      {% if is_blog_page and not is_blog_index_page -%}
+      </div>
+      {% endif -%}
+    </div>
+  </main>
+
+  <footer class="footer-links">
+    <div class="container">
+      {% for link in config.extra.footer_links -%}
+        {% set blog_section_current = link.url == 'technical-blogs/index.html' and page and page.url.startswith('technical-blogs/') -%}
+        <a href="{{ link.url|url }}"{% if page and (page.url == link.url or blog_section_current) %} aria-current="page"{% endif %}>{{ link.title }}</a>
+      {% endfor -%}
+    </div>
+  </footer>
+</body>
+</html>

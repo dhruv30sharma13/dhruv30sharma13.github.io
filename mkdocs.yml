@@ -1,0 +1,132 @@
+site_name: Dhruv Sharma
+site_url: https://dhruv30sharma13.github.io/
+site_author: Dhruv Sharma
+site_description: Portfolio and resume for Dhruv Sharma.
+docs_dir: docs
+site_dir: site
+use_directory_urls: false
+plugins: []
+theme:
+  name: null
+  custom_dir: theme
+extra:
+  owner_name: Dhruv Sharma
+  footer_links:
+  - title: Home
+    url: index.html
+  - title: Technical Blogs
+    url: technical-blogs/index.html
+  - title: Contact
+    url: contact.html
+  page_links:
+    contact.md:
+      home:
+        title: Home
+        url: index.html
+      parent:
+        title: Home
+        url: index.html
+        src: index.md
+    index.md:
+      children:
+      - title: Technical Blogs
+        url: technical-blogs/index.html
+        src: technical-blogs/index.md
+        children:
+        - title: Chapter 1
+          url: technical-blogs/chapter-1/index.html
+          src: technical-blogs/chapter-1/index.md
+          children:
+          - title: 1.1 CPU vs GPU Programming
+            url: technical-blogs/chapter-1/cpu-vs-gpu-programming.html
+            src: technical-blogs/chapter-1/cpu-vs-gpu-programming.md
+          - title: 1.2 CPU vs GPU Parallel Programming
+            url: technical-blogs/chapter-1/cpu-vs-gpu-parallel-programming.html
+            src: technical-blogs/chapter-1/cpu-vs-gpu-parallel-programming.md
+      - title: Contact
+        url: contact.html
+        src: contact.md
+    technical-blogs/chapter-1/cpu-vs-gpu-parallel-programming.md:
+      home:
+        title: Home
+        url: index.html
+      parent:
+        title: Chapter 1
+        url: technical-blogs/chapter-1/index.html
+        src: technical-blogs/chapter-1/index.md
+      chapter:
+        title: Chapter 1
+        url: technical-blogs/chapter-1/index.html
+        src: technical-blogs/chapter-1/index.md
+    technical-blogs/chapter-1/cpu-vs-gpu-programming.md:
+      home:
+        title: Home
+        url: index.html
+      parent:
+        title: Chapter 1
+        url: technical-blogs/chapter-1/index.html
+        src: technical-blogs/chapter-1/index.md
+      chapter:
+        title: Chapter 1
+        url: technical-blogs/chapter-1/index.html
+        src: technical-blogs/chapter-1/index.md
+    technical-blogs/chapter-1/index.md:
+      home:
+        title: Home
+        url: index.html
+      parent:
+        title: Technical Blogs
+        url: technical-blogs/index.html
+        src: technical-blogs/index.md
+      children:
+      - title: 1.1 CPU vs GPU Programming
+        url: technical-blogs/chapter-1/cpu-vs-gpu-programming.html
+        src: technical-blogs/chapter-1/cpu-vs-gpu-programming.md
+      - title: 1.2 CPU vs GPU Parallel Programming
+        url: technical-blogs/chapter-1/cpu-vs-gpu-parallel-programming.html
+        src: technical-blogs/chapter-1/cpu-vs-gpu-parallel-programming.md
+    technical-blogs/index.md:
+      home:
+        title: Home
+        url: index.html
+      parent:
+        title: Home
+        url: index.html
+        src: index.md
+      children:
+      - title: Chapter 1
+        url: technical-blogs/chapter-1/index.html
+        src: technical-blogs/chapter-1/index.md
+        children:
+        - title: 1.1 CPU vs GPU Programming
+          url: technical-blogs/chapter-1/cpu-vs-gpu-programming.html
+          src: technical-blogs/chapter-1/cpu-vs-gpu-programming.md
+        - title: 1.2 CPU vs GPU Parallel Programming
+          url: technical-blogs/chapter-1/cpu-vs-gpu-parallel-programming.html
+          src: technical-blogs/chapter-1/cpu-vs-gpu-parallel-programming.md
+  generated_titles:
+    contact.md: Contact
+    index.md: Home
+    technical-blogs/chapter-1/cpu-vs-gpu-parallel-programming.md: 1.2 CPU vs GPU Parallel
+      Programming
+    technical-blogs/chapter-1/cpu-vs-gpu-programming.md: 1.1 CPU vs GPU Programming
+    technical-blogs/chapter-1/index.md: Chapter 1
+    technical-blogs/index.md: Technical Blogs
+  generated_strip_labels:
+    contact.md: Contact
+    index.md: Home
+    technical-blogs/chapter-1/cpu-vs-gpu-parallel-programming.md: Technical Blogs
+      / Chapter 1
+    technical-blogs/chapter-1/cpu-vs-gpu-programming.md: Technical Blogs / Chapter
+      1
+    technical-blogs/chapter-1/index.md: Technical Blogs / Chapter 1
+    technical-blogs/index.md: Technical Blogs
+nav:
+- Home: index.md
+- Technical Blogs:
+  - Technical Blogs: technical-blogs/index.md
+  - Chapter 1:
+    - Chapter 1: technical-blogs/chapter-1/index.md
+    - 1.1 CPU vs GPU Programming: technical-blogs/chapter-1/cpu-vs-gpu-programming.md
+    - 1.2 CPU vs GPU Parallel Programming: technical-blogs/chapter-1/cpu-vs-gpu-parallel-programming.md
+- Contact: contact.md
