@@ -6,36 +6,33 @@ hero_title: Dhruv Sharma
 tagline: Software Engineer | GPU Programming | Parallel Computing
 ---
 
-<section class="resume-intro">
-  <p>Email: <a href="mailto:dhruv30sharma13@gmail.com">dhruv30sharma13@gmail.com</a></p>
-  <p>GitHub: <a href="https://github.com/dhruv30sharma13" target="_blank" rel="noopener noreferrer">github.com/dhruv30sharma13</a></p>
-  <p>Mobile: +91 8700852723</p>
+<section class="resume-section portfolio-overview">
+  <aside class="profile-panel">
+    <img class="profile-image" src="me.jpeg" alt="Dhruv Sharma">
+  </aside>
+  <div class="portfolio-summary">
+    <h2>About</h2>
+    <p>Software Engineer, Samsung Research, Bangalore, India</p>
+    <p>I work on GPU programming, architecture and parallel computing, with interests across computer architecture, deep learning, computer vision and robotics. I have experience working with GPU programming for signal processing software in CUDA, distributed training paradigms, AMD architecture and HIP programming.</p>
+    <p>I love hiking, running, music, novels, cooking and tennis.</p>
+  </div>
 </section>
 
 <section class="resume-section">
   <h2>Education</h2>
   <ul>
     <li>
-      <strong>Indian Institute of Technology (BHU), Varanasi</strong> | B.Tech in Electronics Engineering | GPA: 9.02/10
+      <strong>Indian Institute of Technology (BHU), Varanasi</strong> | Bachelors in Electronics Engineering | GPA: 9.02/10
       <span class="meta">Dec 2021 - June 2025</span>
     </li>
     <li>
-      <strong>Apeejay School, Faridabad</strong> | Class XII (CBSE) | 96.2%
+      <strong>Apeejay School, Faridabad</strong> | Class XII (CBSE)
       <span class="meta">2021</span>
     </li>
     <li>
-      <strong>Apeejay School, Faridabad</strong> | Class X (CBSE) | 95.8%
+      <strong>Apeejay School, Faridabad</strong> | Class X (CBSE)
       <span class="meta">2019</span>
     </li>
-  </ul>
-</section>
-
-<section class="resume-section">
-  <h2>Skills and Interests</h2>
-  <ul>
-    <li><strong>Programming Languages:</strong> Python, CUDA parallel programming/C++, C, SQL</li>
-    <li><strong>Frameworks and Libraries:</strong> CUDA, HIP, MATLAB/Octave, Pytorch, Tensorflow/Keras, OpenCV, Numpy, Pandas</li>
-    <li><strong>Interests:</strong> Parallel Programming, Compute Architecture, Deep Learning, Computer Vision, Robotics, Digital Electronics, DSA</li>
   </ul>
 </section>
 
@@ -111,7 +108,7 @@ tagline: Software Engineer | GPU Programming | Parallel Computing
   <p>CSO-101 Computer Programming, CSO-102 Data Structures and Algorithms, MA-101 and MA-102 Engineering Mathematics I and II, MA-202 Probability and Statistics, EC-323 Embedded System Design, EC-313 Digital Signal Processing, CSE-342 Intelligent Computing, CSE-363 Information Retrieval, EC-413 Information Theory.</p>
 </section>
 
-<section class="resume-section">
+<!-- <section class="resume-section">
   <h2>Achievements</h2>
   <ol>
     <li>Received Samsung Excellence Award for Q4 2025, and Spot Award for quick ramp-up and contributions in February 2025.</li>
@@ -119,7 +116,7 @@ tagline: Software Engineer | GPU Programming | Parallel Computing
     <li>Secured 1st position among 30+ teams in Mosaic'23, a computer vision event under Udyam'23 at IIT (BHU).</li>
     <li>Secured AIR 2367 in JEE Advanced among more than 1 million candidates.</li>
   </ol>
-</section>
+</section> -->
 
 <section class="resume-section">
   <h2>Publications</h2>
