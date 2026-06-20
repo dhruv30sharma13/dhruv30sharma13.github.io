@@ -23,7 +23,7 @@ body {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Courier New", Courier, "Lucida Console", monospace;
+  font-family: "Ubuntu Mono", "Courier New", Courier, "Lucida Console", monospace;
   line-height: 1.45;
 }
 
@@ -94,6 +94,105 @@ body {
 
 .resume-intro p {
   margin: 4px 0;
+}
+
+.portfolio-overview {
+  display: grid;
+  grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.profile-panel {
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 18px;
+}
+
+.image-placeholder,
+.profile-image {
+  aspect-ratio: 1;
+  max-width: 240px;
+  width: 100%;
+}
+
+.image-placeholder {
+  align-items: center;
+  background: #dedede;
+  border: 1px dashed #777777;
+  color: #444444;
+  display: flex;
+  font-size: 1.1rem;
+  justify-content: center;
+}
+
+.profile-image {
+  border: 1px solid var(--border);
+  display: block;
+  object-fit: cover;
+}
+
+.profile-role,
+.profile-location {
+  margin: 0;
+}
+
+.profile-role {
+  font-weight: 700;
+}
+
+.portfolio-summary {
+  min-width: 0;
+}
+
+.portfolio-summary p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-card {
+  text-align: center;
+}
+
+.contact-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.contact-icon {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--text);
+  display: inline-flex;
+  font-size: 1.05rem;
+  font-weight: 700;
+  height: 56px;
+  justify-content: center;
+  min-width: 56px;
+  padding: 0 12px;
+}
+
+.contact-icon:hover,
+.contact-icon:focus-visible {
+  background: var(--nav-bg);
+  text-decoration: none;
+}
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 h2 {
@@ -198,6 +297,15 @@ ol {
   margin-top: 5px;
 }
 
+.blog-image {
+  border: 1px solid var(--border);
+  display: block;
+  height: auto;
+  margin: 16px auto 0;
+  max-width: 720px;
+  width: 100%;
+}
+
 .meta {
   display: block;
   color: #303030;
@@ -239,6 +347,17 @@ a:focus-visible {
   .strip-content {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .portfolio-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-panel {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+    padding-right: 0;
   }
 
   .blog-layout {

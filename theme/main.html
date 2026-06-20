@@ -28,6 +28,9 @@
   <link rel="canonical" href="{{ page.canonical_url }}">
   {% endif -%}
   <title>{% if is_blog_page and generated_title %}{{ generated_title }} | {{ config.site_name }}{% elif page and page.meta.html_title %}{{ page.meta.html_title }}{% elif page and page.title %}{{ page.title }} | {{ config.site_name }}{% else %}{{ config.site_name }}{% endif %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap">
   <link rel="stylesheet" href="{{ 'css/styles.css'|url }}">
 </head>
 <body>
@@ -50,8 +53,8 @@
   {% set page_links = config.extra.page_links.get(page_src, {}) if page_src else {} -%}
   {% set blog_root = config.extra.page_links.get('technical-blogs/index.md', {}) -%}
   <main class="page-content">
-    <div class="container{% if is_blog_page and not is_blog_index_page %} blog-layout{% endif %}">
-      {% if is_blog_page and not is_blog_index_page -%}
+    <div class="container{% if is_blog_page %} blog-layout{% endif %}">
+      {% if is_blog_page -%}
       <aside class="side-navigation" aria-label="Technical blog navigation">
         {% if blog_root.children -%}
         <div class="side-navigation-tree">
@@ -65,14 +68,14 @@
 
       {{ page.content }}
 
-      {% if is_blog_index_page and page_links.children -%}
+      {% if is_blog_index_page and page_src != 'technical-blogs/index.md' and page_links.children -%}
       <section class="resume-section">
         <h2>Contents</h2>
         {{ render_page_tree(page_links.children, 'content-tree') }}
       </section>
       {% endif -%}
 
-      {% if is_blog_page and not is_blog_index_page -%}
+      {% if is_blog_page -%}
       </div>
       {% endif -%}
     </div>
