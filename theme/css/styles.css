@@ -23,7 +23,7 @@ body {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Ubuntu Mono", "Courier New", Courier, "Lucida Console", monospace;
+  font-family: "Ubuntu Sans Mono", "Aptos Mono", "IBM Plex Mono", "Roboto Mono", "SFMono-Regular", "Segoe UI Mono", monospace;
   line-height: 1.45;
 }
 
